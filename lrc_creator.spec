@@ -1,0 +1,62 @@
+# -*- mode: python ; coding: utf-8 -*-
+
+block_cipher = None
+
+a = Analysis(
+    ['lrc_creator.py'],
+    pathex=[],
+    binaries=[],
+    datas=[('lrc_creator.ui','.')],
+    hiddenimports=['PyQt5.uic',
+                    'PyQt5.QtWidgets',
+                    'PyQt5.QtCore.QSettings',
+                    'PyQt5.QtCore.Qt',
+                    'PyQt5.QtCore.QThread',
+                    'PyQt5.QtCore.pyqtSignal',
+                    'PyQt5.QtGui.QBrush',
+                    'PyQt5.QtGui.QIcon',
+                    'tkinter.filedialog',
+                    'tkinter.messagebox',
+                    'sys',
+                    'available_list',
+                    'lrc_creator_model',
+                    'glob',
+                    'mutagen',
+                    'os',
+                    'json',
+                    'urllib',
+                    'bs4.BeautifulSoup',
+                    'requests'],
+    hookspath=[],
+    hooksconfig={},
+    runtime_hooks=[],
+    excludes=[],
+    win_no_prefer_redirects=False,
+    win_private_assemblies=False,
+    cipher=block_cipher,
+    noarchive=False,
+)
+pyz = PYZ(a.pure, a.zipped_data, cipher=block_cipher)
+
+exe = EXE(
+    pyz,
+    a.scripts,
+    a.binaries,
+    a.zipfiles,
+    a.datas,
+    [],
+    name='LRC 생성기 68',
+    debug=False,
+    bootloader_ignore_signals=False,
+    strip=False,
+    upx=True,
+    upx_exclude=[],
+    runtime_tmpdir=None,
+    console=False,
+    disable_windowed_traceback=False,
+    argv_emulation=False,
+    target_arch=None,
+    codesign_identity=None,
+    entitlements_file=None,
+    icon='lrc_creator.ico'
+)
