@@ -55,7 +55,8 @@ def check_tags(metadata_details, file_name, file_type, metadata):
             else: 
                 return False
             
-        elif file_type == ".mp3" or file_type == ".wav":
+        elif ( file_type    == ".mp3" 
+              or file_type  == ".wav"):
 
             if metadata['TALB'].text[0] is not None: metadata_details['album']   = metadata['TALB'].text[0]
             if metadata['TPE1'].text[0] is not None: metadata_details['artist']  = metadata['TPE1'].text[0]
