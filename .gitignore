@@ -1,0 +1,7 @@
+# Git에 커밋 무시 목록
+
+__pycache__
+.vscode
+build
+dist
+images
